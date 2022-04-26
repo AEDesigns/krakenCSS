@@ -7,25 +7,53 @@
         background-color: $val;
     }
 
+
+    @if($val != black and $val != white){
     // light variations
     @for $i from 1 through 9 {
-        .text-#{$key}-lite-#{$i}{
-            color: mix(white, $val, $i * 10)
+            .text-#{$key}-lite-#{$i}{
+                color: mix(white, $val, $i * 10)
+            }
+
+            .text-hover-#{$key}-lite-#{$i}{
+                &:hover{
+                    color: mix(white, $val, $i * 10)
+                }
+            }
+
+            .element-focus-#{$key}-lite-#{$i}{
+                &:focus{
+                    border: $base-border-thickness, solid, mix(white, $val, $i * 10)
+                }
+            }
+
+            .bg-#{$key}-lite-#{$i}{
+                background-color: mix(white, $val, $i * 10)
+            }
         }
 
-        .bg-#{$key}-lite-#{$i}{
-            background-color: mix(white, $val, $i * 10)
-        }
-    }
+        // dark variations
+        @for $i from 1 through 9 {
+            .text-#{$key}-dark-#{$i}{
+                color: mix(black, $val, $i * 10)
+            }
 
-    // dark variations
-    @for $i from 1 through 9 {
-        .text-#{$key}-dark-#{$i}{
-            color: mix(black, $val, $i * 10)
-        }
+            .bg-#{$key}-dark-#{$i}{
+                background-color: mix(black, $val, $i * 10)
+            }
 
-        .bg-#{$key}-dark-#{$i}{
-            background-color: mix(black, $val, $i * 10)
+            .text-hover-#{$key}-dark-#{$i}{
+                &:hover{
+                    color: mix(black, $val, $i * 10)
+                }
+            }
+
+            .element-focus-#{$key}-dark-#{$i}{
+                &:focus{
+                    border: $base-border-thickness, solid, mix(black, $val, $i * 10)
+                }
+            }
+            
         }
     }
 }
