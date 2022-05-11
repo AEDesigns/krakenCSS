@@ -146,7 +146,17 @@ $utilities: (
           "i": inline,
           "i-b": inline-block
         )
-      )
+      ),
+      "font-size": (
+          "prefix": "fs",
+          "values": (
+              "sm": $font-size-sm,
+              "md": $base-font-size,
+              "lg": $font-size-lg,
+              "xlg": $font-size-xlg,
+              "xxl": $font-size-xxl
+          )
+        )
     );
     
     // generate utility classes
